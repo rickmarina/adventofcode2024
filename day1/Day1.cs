@@ -1,5 +1,6 @@
 namespace adventofcode2024;
 
+//--- Day 1: Historian Hysteria ---
 public class Day1 : IDay
 {
     public void SolvePart1()
