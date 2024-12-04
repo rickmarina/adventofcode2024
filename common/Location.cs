@@ -11,7 +11,7 @@ public class Location<T> {
 
     public override string ToString()
     {
-        return string.Format("Y:{0},X:{1}", y,x);
+        return string.Format("X:{0},Y:{1}", x,y);
     }
 
     //Hacemos override de los siguientes métodos para que al intentar buscar realice la comparación entre los objetos de tipo location usando toString()

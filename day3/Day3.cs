@@ -1,6 +1,5 @@
 using System.Text.RegularExpressions;
 
-
 //--- Day 3: Mull It Over ---
 public class Day3 : IDay
 {

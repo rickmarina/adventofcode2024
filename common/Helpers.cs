@@ -55,7 +55,7 @@ public class Helpers
     }
 
     /// <summary>
-    /// Total different chars between two strings
+    /// Total different chars between two strings with same length
     /// </summary>
     /// <returns></returns>
     public static int TotalDiffChars(string a, string b) { 
