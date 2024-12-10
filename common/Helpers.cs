@@ -1,6 +1,3 @@
-
-
-using System.Reflection.PortableExecutable;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -72,12 +69,8 @@ public class Helpers
         }
     }
 
-    public static bool InBounds(char[][] map, int r, int c) {
-        int height = map.Length;
-        int width = map[0].Length;
-        return (r >= 0 && r < height && c >= 0 && c < width);
-    }
-
+    public static bool InBounds(char[][] map, int r, int c) => (r >= 0 && r < map.Length && c >= 0 && c < map[0].Length);
+    
     public static void RotateMatrixClockwise(char[][] matrix)
     {
          int n = matrix.Length;
