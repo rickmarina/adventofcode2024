@@ -97,23 +97,21 @@ public class Helpers
 
     public static string GetSHA256(string input)
     {
-        using (SHA256 sha256 = SHA256.Create())
+        using SHA256 sha256 = SHA256.Create();
+        // Convertir la cadena de entrada en bytes
+        byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+
+        // Calcular el hash SHA-256
+        byte[] hashBytes = sha256.ComputeHash(inputBytes);
+
+        // Convertir el hash en una cadena hexadecimal
+        StringBuilder hashStringBuilder = new StringBuilder();
+        foreach (byte b in hashBytes)
         {
-            // Convertir la cadena de entrada en bytes
-            byte[] inputBytes = Encoding.UTF8.GetBytes(input);
-
-            // Calcular el hash SHA-256
-            byte[] hashBytes = sha256.ComputeHash(inputBytes);
-
-            // Convertir el hash en una cadena hexadecimal
-            StringBuilder hashStringBuilder = new StringBuilder();
-            foreach (byte b in hashBytes)
-            {
-                hashStringBuilder.Append(b.ToString("x2"));
-            }
-
-            return hashStringBuilder.ToString();
+            hashStringBuilder.Append(b.ToString("x2"));
         }
+
+        return hashStringBuilder.ToString();
     }
 
 }
