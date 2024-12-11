@@ -68,6 +68,7 @@ public class Day9 : IDay
 
         System.Console.WriteLine("disk: "+string.Join(",", disk.Where(x=> x.blocks > 0).Select(x=> x.id)));
 
+        //checksum
         long pos = 0;
         long ans = 0;
         for (int i=0; i< disk.Count; i++) {
