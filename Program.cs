@@ -2,7 +2,7 @@
 
 public class Program { 
     public static void Main(string[] args) {
-        Day9 day = new();
+        Day10 day = new();
         day.SolvePart2();
     }
 }
