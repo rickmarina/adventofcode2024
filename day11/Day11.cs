@@ -1,5 +1,5 @@
 //--- Day 11: Plutonian Pebbles ---
-using System.Collections.Concurrent;
+using Cache = System.Collections.Concurrent.ConcurrentDictionary<(string, int), long>;
 
 public class Day11 : IDay
 {
@@ -47,7 +47,7 @@ public class Day11 : IDay
     {
         string stones = "2 72 8949 0 981038 86311 246 7636740";
 
-        ConcurrentDictionary<(string, int), long> cache = [];
+        Cache cache = [];
 
         long result = stones.Split(" ").Sum(n=> Eval(long.Parse(n), 75, cache));
 
@@ -55,7 +55,7 @@ public class Day11 : IDay
         
     }
 
-     long Eval(long n, int blinks, ConcurrentDictionary<(string, int), long> cache) =>
+     long Eval(long n, int blinks, Cache cache) =>
         cache.GetOrAdd((n.ToString(), blinks), key => 
             key switch {
                 (_, 0)   => 1,
